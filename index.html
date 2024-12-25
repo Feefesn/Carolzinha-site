@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Site da Princesa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+    <header>
+        <h1>💋'S Website</h1>
+    
+        <nav>
+            <ul class="menu">
+                <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#mensagens"><i class="fas fa-envelope"></i> Mensagens Diárias</a></li>
+                <li><a href="#wishlist"><i class="fas fa-heart"></i> Wishlist</a></li>
+                <li><a href="#contabilidade"><i class="fas fa-calculator"></i> Contabilidade</a></li>
+                <li><a href="#calendario"><i class="fas fa-calendar-day"></i> Calend��rio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Bem-vinda!</h2>
+            <p>Seu espaço feito por mim. 💕</p>
+        </section>
+
+        <section id="mensagens">
+            <h2>Mensagens Diárias</h2>
+            <div class="daily-message">
+                <h3>Sua Mensagem do Dia:</h3>
+                <p id="message">Carregando mensagem...</p>
+            </div>
+        </section>
+
+        <section id="wishlist">
+            <h2>Sua Lista de Desejos</h2>
+            <form id="wishlist-form">
+                <input type="text" id="wishlist-item" placeholder="Digite o item desejado" required>
+                <button type="submit">Adicionar à Lista</button>
+            </form>
+            <ul id="wishlist-list"></ul>
+        </section>
+
+        <section id="contabilidade">
+            <h2>Controle de Despesas</h2>
+            <form id="expense-form">
+                <input type="text" id="expense-name" placeholder="Descrição" required>
+                <input type="number" id="expense-amount" placeholder="Valor" required>
+                <select id="expense-type" required>
+                    <option value="">Entrada ou Saída</option>
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                </select>
+                <select id="expense-fixed-variable" required>
+                    <option value="">Fixo ou Variável</option>
+                    <option value="fixo">Fixo</option>
+                    <option value="variavel">Variável</option>
+                </select>
+                <select id="expense-payment-method" required>
+                    <option value="">Forma de Pagamento</option>
+                    <option value="cartao-credito">Cartão de Crédito</option>
+                    <option value="cartao-debito">Cartão de Débito</option>
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <select id="expense-category" required>
+                    <option value="">Selecione a Categoria</option>
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <button type="submit">Adicionar</button>
+            </form>
+            <ul id="expense-list"></ul>
+            <p id="balance">Saldo: R$ 0.00</p>
+            <h3>Relatório por Categoria</h3>
+            <ul id="category-report"></ul>
+            <h3>Gráfico de Despesas por Categoria</h3>
+            <div style="width: 300px; margin: 0 auto;">
+                <canvas id="expense-chart" width="300" height="300"></canvas>
+            </div>
+        </section>
+
+        <section id="calendario">
+            <h2>Calendário</h2>
+            <div id="calendar-header">
+                <button id="prev-month" onclick="changeMonth(-1)">&#10094;</button>
+                <h3 id="month-year"></h3>
+                <button id="next-month" onclick="changeMonth(1)">&#10095;</button>
+            </div>
+            <div id="calendar"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
